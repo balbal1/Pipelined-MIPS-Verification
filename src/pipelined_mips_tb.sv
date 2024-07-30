@@ -6,6 +6,13 @@ module pipelined_mips_tb(pipelined_mips_if.TEST _if, input bit [31:0] data_memor
     Instruction instruction = new();
     min_max_test min_max_test_1 = new();
 
+    bit clk;
+
+    always begin
+      #20 clk = ~clk;
+	  instruction.clk = clk;
+  	end
+
     initial begin
         
         start_program = 0;
@@ -15,8 +22,11 @@ module pipelined_mips_tb(pipelined_mips_if.TEST _if, input bit [31:0] data_memor
         #10;
         _if.rst = 0;
 
+        // instruction.instruction_coverage.start();
         instruction.set_full_i_command(enums_pkg::_addi, enums_pkg::zero, enums_pkg::t2, 0);
         instruction_memory[0] = instruction.instruction_word;
+        // instruction.instruction_coverage.stop();
+        // instruction.instruction_coverage.sample();
         #20;
         
         instruction.set_full_i_command(enums_pkg::_addi, enums_pkg::zero, enums_pkg::t3, -1);
