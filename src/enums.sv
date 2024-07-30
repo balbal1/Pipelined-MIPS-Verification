@@ -1,0 +1,130 @@
+package enums_pkg;
+
+    typedef enum bit [1:0] {R_format, I_format, J_format} types;
+
+    typedef enum bit [6:0] {
+        And     = 7'b0100100,
+        Or      = 7'b0100101,
+        Nor     = 7'b0100111,
+        Xor     = 7'b0100110,
+        add     = 7'b0100000,
+        addu    = 7'b0100001,
+        sub     = 7'b0100010,
+        slt     = 7'b0101010,
+        sltu    = 7'b0101011,
+        sll     = 7'b0000000,
+        sllv    = 7'b0000100,
+        sra     = 7'b0000011,
+        srav    = 7'b0000111,
+        srl     = 7'b0000010,
+        srlv    = 7'b0000110,
+        divu    = 7'b0011011,
+        jr      = 7'b0001000,
+        jalr    = 7'b0001001,
+        andi 	= 7'b1001100,
+        ori 	= 7'b1001101,
+        xori 	= 7'b1001110,
+        addi 	= 7'b1001000,
+        addiu 	= 7'b1001001,
+        lui 	= 7'b1001111,
+        sltiu 	= 7'b1001011,
+        slti 	= 7'b1001010,
+        beq 	= 7'b1000100,
+        bne 	= 7'b1000101,
+        bgez 	= 7'b1000001,
+        sw 		= 7'b1101011,
+        sh 		= 7'b1101001,
+        sb 		= 7'b1101000,
+        lw 		= 7'b1100011,
+        lh 		= 7'b1100001,
+        lhu 	= 7'b1100101,
+        lb 		= 7'b1100000,
+        lbu 	= 7'b1100100,
+        j 		= 7'b1000010,
+        jal 	= 7'b1000011
+    } All_formats;
+
+    typedef enum bit [5:0] {
+        _And     = 6'b100100,
+        _Or      = 6'b100101,
+        _Nor     = 6'b100111,
+        _Xor     = 6'b100110,
+        _add     = 6'b100000,
+        _addu    = 6'b100001,
+        _sub     = 6'b100010,
+        _slt     = 6'b101010,
+        _sltu    = 6'b101011,
+        _sll     = 6'b000000,
+        _sllv    = 6'b000100,
+        _sra     = 6'b000011,
+        _srav    = 6'b000111,
+        _srl     = 6'b000010,
+        _srlv    = 6'b000110,
+        _divu    = 6'b011011,
+        _jr      = 6'b001000,
+        _jalr    = 6'b001001
+    } R_instructions;
+
+    typedef enum bit [5:0] {
+        _andi 	= 6'b001100,
+        _ori 	= 6'b001101,
+        _xori 	= 6'b001110,
+        _addi 	= 6'b001000,
+        _addiu 	= 6'b001001,
+        _lui 	= 6'b001111,
+        _sltiu 	= 6'b001011,
+        _slti 	= 6'b001010,
+        _beq 	= 6'b000100,
+        _bne 	= 6'b000101,
+        _bgez 	= 6'b000001,
+        _sw 	= 6'b101011,
+        _sh 	= 6'b101001,
+        _sb 	= 6'b101000,
+        _lw 	= 6'b100011,
+        _lh 	= 6'b100001,
+        _lhu 	= 6'b100101,
+        _lb 	= 6'b100000,
+        _lbu 	= 6'b100100
+    } I_instructions;
+
+    typedef enum bit [5:0] {
+        _j 		= 6'b000010,
+        _jal 	= 6'b000011
+    } J_instructions;
+
+    typedef enum bit [4:0] {
+        zero,
+        at,
+        v0,
+        v1,
+        a0,
+        a1,
+        a2,
+        a3,
+        t0,
+        t1,
+        t2,
+        t3,
+        t4,
+        t5,
+        t6,
+        t7,
+        s0,
+        s1,
+        s2,
+        s3,
+        s4,
+        s5,
+        s6,
+        s7,
+        t8,
+        t9,
+        k0,
+        k1,
+        gp,
+        sp,
+        fp,
+        ra
+    } Registers;
+
+endpackage
